@@ -13,7 +13,7 @@ export class NewStudentFormComponent implements OnInit {
   @Input() lastName: string;
   @Input() inquiry: string;
 
-  public mode = 'add'; //default mode
+  public mode = 'Add'; //default mode
   private id: string; //student ID
 
   constructor(private _myservice: StudentService, private router: Router, public route: ActivatedRoute) { }
@@ -21,18 +21,18 @@ export class NewStudentFormComponent implements OnInit {
   ngOnInit(){
     this.route.paramMap.subscribe((paramMap: ParamMap ) => {
        if (paramMap.has('_id'))
-         { this.mode = 'edit'; /*request had a parameter _id */ 
+         { this.mode = 'Edit'; /*request had a parameter _id */ 
            this.id = paramMap.get('_id');}
-       else {this.mode = 'add';
+       else {this.mode = 'Add';
            this.id = null; }
      });
   }
   
   onSubmit(){
     console.log("You submitted: " + this.firstName + " " + this.lastName + " " + this.inquiry);
-    if(this.mode == 'add')
+    if(this.mode == 'Add')
       this._myservice.addStudents(this.firstName, this.lastName, this.inquiry);
-    if(this.mode == 'edit')
+    if(this.mode == 'Edit')
       this._myservice.updateStudent(this.id, this.firstName, this.lastName, this.inquiry);
     
     this.router.navigate(['/listStudents']);

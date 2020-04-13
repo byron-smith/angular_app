@@ -1,5 +1,5 @@
 <div>
-    <h3>{{mode}} Student Form</h3>
+    <h3>{{mode}} Inquiry</h3>
     <form (ngSubmit)="onSubmit()" #myForm="ngForm">
       <mat-form-field >
         <input matInput placeholder="First Name" id="firstname" [(ngModel)]=" firstName" name="firstname" >
@@ -12,6 +12,9 @@
       <mat-form-field >
         <input matInput placeholder="Inquiry" id="inquiry" [(ngModel)]=" inquiry" name="inquiry" >
       </mat-form-field>
+
+      
+
       <p>
         <button type="submit" mat-raised-button color="primary">Submit</button>
       </p>

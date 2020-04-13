@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 import { ListStudentsComponent } from './list-students/list-students.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [ {
   path: '',                     //default component to display
@@ -41,7 +43,9 @@ const appRoutes: Routes = [ {
     NewStudentFormComponent,
     NavigationMenuComponent,
     ListStudentsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
